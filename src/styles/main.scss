@@ -1,0 +1,74 @@
+$default-dark-color: #333333;
+$default-light-color: #fefefe;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  background-color: $default-light-color;
+}
+
+.container {
+  max-width: 600px;
+  max-height: 1000px;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  #start-button {
+    margin: auto auto;
+    color: $default-dark-color;
+    background-color: $default-light-color;
+    padding: 15px 35px;
+    border: 1px solid $default-dark-color;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 5px $default-dark-color;
+    }
+  }
+  
+  #game {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: $default-light-color;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $default-dark-color;
+    border-top: 0;
+    border-bottom: 0;
+    overflow: hidden;
+
+    .column {
+      flex: 1;
+      height: 100%;
+
+      &:not(:last-of-type) {
+        border-right: 1px solid $default-dark-color;
+      }
+
+      .note {
+        background-color: $default-dark-color;
+        height: calc(200px - 2px);
+        width: calc(100% - 2px);
+        display: block;
+        border: 1px solid $default-light-color;
+
+        &.blank {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
